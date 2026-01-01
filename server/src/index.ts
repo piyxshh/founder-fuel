@@ -8,6 +8,7 @@ import express from "express";
 import cors from "cors";
 import scraperRoutes from "./routes/scraper.routes.js";
 import analysisRoutes from "./routes/analysis.routes.js";
+import repurposeRoutes from "./routes/repurpose.routes.js";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // APP SETUP
@@ -41,6 +42,7 @@ app.get("/health", (req, res) => {
 // Mount routes at /api
 app.use("/api", scraperRoutes);
 app.use("/api", analysisRoutes);
+app.use("/api", repurposeRoutes);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // START SERVER

@@ -40,3 +40,15 @@ model AnalysisResult {
   @@index([url])
 }
 
+/// Stores repurposed content from blog posts
+model RepurposeResult {
+  id             String   @id @default(uuid())
+  url            String
+  title          String
+  twitterThread  String   @db.Text  // Twitter thread content
+  linkedinPost   String   @db.Text  // LinkedIn post content
+  newsletter     String   @db.Text  // Newsletter snippet
+  createdAt      DateTime @default(now())
+  
+  @@index([url])
+}

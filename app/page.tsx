@@ -48,7 +48,7 @@ export default function HomePage() {
           </motion.p>
         </div>
 
-        {/* 6. CTA Button with spring animation */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,14 +58,24 @@ export default function HomePage() {
             damping: 15,
             delay: 0.6
           }}
+          className="flex flex-col sm:flex-row gap-4 mt-8"
         >
           <Link href="/analyze">
             <Button
               variant="outline"
               size="lg"
-              className="mt-8 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+              className="border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all duration-300"
             >
-              Analyze Your Landing Page
+              🎯 Audit Landing Page
+            </Button>
+          </Link>
+          <Link href="/repurpose">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+            >
+              ✨ Repurpose Content
             </Button>
           </Link>
         </motion.div>
