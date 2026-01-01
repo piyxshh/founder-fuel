@@ -5,6 +5,7 @@
 
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 
 import { Button } from "@/components/ui/button";
@@ -58,13 +59,15 @@ export default function HomePage() {
             delay: 0.6
           }}
         >
-          <Button
-            variant="outline"
-            size="lg"
-            className="mt-8 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all duration-300"
-          >
-            Get Started
-          </Button>
+          <Link href="/analyze">
+            <Button
+              variant="outline"
+              size="lg"
+              className="mt-8 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+            >
+              Analyze Your Landing Page
+            </Button>
+          </Link>
         </motion.div>
 
       </div>
