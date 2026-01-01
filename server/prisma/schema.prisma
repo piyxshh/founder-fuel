@@ -1,0 +1,42 @@
+// File: server/prisma/schema.prisma
+// Prisma schema for FounderFuel - defines database models
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// MODELS
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/// Stores scraped website content
+model ScrapeResult {
+  id          String   @id @default(uuid())
+  url         String
+  title       String
+  description String
+  bodyText    String   @db.Text
+  scrapedAt   DateTime @default(now())
+  
+  @@index([url])
+}
+
+/// Stores landing page analysis results
+model AnalysisResult {
+  id             String   @id @default(uuid())
+  url            String
+  headlineScore  Int      // 1-10 score for headline clarity
+  valueScore     Int      // 1-10 score for value proposition
+  ctaScore       Int      // 1-10 score for CTA strength
+  trustScore     Int      // 1-10 score for trust signals
+  overallScore   Int      // Average of all scores
+  feedback       String   @db.Text  // Detailed AI feedback
+  analyzedAt     DateTime @default(now())
+  
+  @@index([url])
+}
+
