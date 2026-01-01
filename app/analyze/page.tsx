@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // TYPES
@@ -110,6 +111,12 @@ export default function AnalyzePage() {
                     <p className="text-lg text-gray-400">
                         Get AI-powered scores and actionable feedback for your landing page
                     </p>
+                    <Link
+                        href="/history"
+                        className="inline-block mt-4 text-sm text-purple-400 hover:text-purple-300 transition-colors"
+                    >
+                        View History →
+                    </Link>
                 </motion.div>
 
                 {/* Form */}
